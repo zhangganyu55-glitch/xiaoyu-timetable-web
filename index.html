@@ -494,7 +494,49 @@ const STORE_KEY = 'xiaoyu.timetable.v1';
 const MAX_WEEK_SELECTABLE = 20;
 
 // 个人版由 build-personal 脚本注入真实课表；公开版保持 null。
-const SEED = /*__SEED__*/null;
+const SEED = /*__SEED__*/{
+  "term" : {
+    "firstWeekMonday" : "2026-08-31",
+    "name" : "2026-2027-1",
+    "periods" : [
+      { "index" : 1,  "start" : "08:30", "end" : "09:15" },
+      { "index" : 2,  "start" : "09:20", "end" : "10:05" },
+      { "index" : 3,  "start" : "10:25", "end" : "11:10" },
+      { "index" : 4,  "start" : "11:15", "end" : "12:00" },
+      { "index" : 5,  "start" : "13:30", "end" : "14:15" },
+      { "index" : 6,  "start" : "14:20", "end" : "15:05" },
+      { "index" : 7,  "start" : "15:25", "end" : "16:10" },
+      { "index" : 8,  "start" : "16:15", "end" : "17:00" },
+      { "index" : 9,  "start" : "18:00", "end" : "18:45" },
+      { "index" : 10, "start" : "18:50", "end" : "19:35" },
+      { "index" : 11, "start" : "19:40", "end" : "20:25" }
+    ]
+  },
+  "sessions" : [
+    { "id" : "A1B2C3D4-0000-4000-8000-000000000001", "courseName" : "MATLAB及应用", "teacher" : "廖明煜", "weekday" : 1, "startPeriod" : 1, "endPeriod" : 2, "weeks" : [1,2,3,4,5,7,8,9], "room" : "教3-224", "category" : "必修", "creditHours" : 32 },
+    { "id" : "A1B2C3D4-0000-4000-8000-000000000002", "courseName" : "高频电子线路", "teacher" : "王力", "weekday" : 1, "startPeriod" : 5, "endPeriod" : 6, "weeks" : [2,3,4,5,7,8,9,10,11,12,13,14,15,16,17], "room" : "教3-303", "category" : "必修", "creditHours" : 48 },
+    { "id" : "A1B2C3D4-0000-4000-8000-000000000003", "courseName" : "MATLAB及应用", "teacher" : "廖明煜", "weekday" : 2, "startPeriod" : 1, "endPeriod" : 2, "weeks" : [1,2,3,4], "room" : "教3-224", "category" : "必修", "creditHours" : 32 },
+    { "id" : "A1B2C3D4-0000-4000-8000-000000000004", "courseName" : "MATLAB及应用", "teacher" : "廖明煜", "weekday" : 2, "startPeriod" : 1, "endPeriod" : 2, "weeks" : [7,8], "room" : "教2-210", "category" : "必修", "creditHours" : 32 },
+    { "id" : "A1B2C3D4-0000-4000-8000-000000000005", "courseName" : "MATLAB及应用", "teacher" : "廖明煜", "weekday" : 2, "startPeriod" : 3, "endPeriod" : 4, "weeks" : [7,8], "room" : "教2-210", "category" : "必修", "creditHours" : 32 },
+    { "id" : "A1B2C3D4-0000-4000-8000-000000000006", "courseName" : "高频电子线路", "teacher" : "王力", "weekday" : 2, "startPeriod" : 5, "endPeriod" : 6, "weeks" : [1,2,3,4,5], "room" : "教3-304", "category" : "必修", "creditHours" : 48 },
+    { "id" : "A1B2C3D4-0000-4000-8000-000000000007", "courseName" : "AI大模型应用（训练营）", "teacher" : "孙正男", "weekday" : 3, "startPeriod" : 1, "endPeriod" : 2, "weeks" : [1,2,3,4,5,7,8,9,11,12], "room" : "教2-614", "category" : "必修", "creditHours" : 40 },
+    { "id" : "A1B2C3D4-0000-4000-8000-000000000008", "courseName" : "AI大模型应用（训练营）", "teacher" : "孙正男", "weekday" : 3, "startPeriod" : 3, "endPeriod" : 4, "weeks" : [1,2,3,4,5,7,8,9,11,12], "room" : "教2-614", "category" : "必修", "creditHours" : 40 },
+    { "id" : "A1B2C3D4-0000-4000-8000-000000000009", "courseName" : "工程制图", "teacher" : "叶磊", "weekday" : 3, "startPeriod" : 9, "endPeriod" : 11, "weeks" : [1,2,3,4,5,7,8,9], "room" : "教2-616", "category" : "选修", "creditHours" : 32 },
+    { "id" : "A1B2C3D4-0000-4000-8000-000000000010", "courseName" : "数据结构", "teacher" : "王佳", "weekday" : 4, "startPeriod" : 1, "endPeriod" : 2, "weeks" : [1,2,3,4,6,7,8,9,10,11,12,13], "room" : "教3-205", "category" : "必修", "creditHours" : 32 },
+    { "id" : "A1B2C3D4-0000-4000-8000-000000000011", "courseName" : "数据结构", "teacher" : "王佳", "weekday" : 4, "startPeriod" : 5, "endPeriod" : 6, "weeks" : [8,9], "room" : "教2-616", "category" : "必修", "creditHours" : 32 },
+    { "id" : "A1B2C3D4-0000-4000-8000-000000000012", "courseName" : "高频电子线路", "teacher" : "王力", "weekday" : 4, "startPeriod" : 5, "endPeriod" : 6, "weeks" : [15,16], "room" : "教2-616", "category" : "必修", "creditHours" : 48 },
+    { "id" : "A1B2C3D4-0000-4000-8000-000000000013", "courseName" : "数据结构", "teacher" : "王佳", "weekday" : 4, "startPeriod" : 7, "endPeriod" : 8, "weeks" : [8,9], "room" : "教2-616", "category" : "必修", "creditHours" : 32 },
+    { "id" : "A1B2C3D4-0000-4000-8000-000000000014", "courseName" : "高频电子线路", "teacher" : "王力", "weekday" : 4, "startPeriod" : 7, "endPeriod" : 8, "weeks" : [15,16], "room" : "教2-616", "category" : "必修", "creditHours" : 48 },
+    { "id" : "A1B2C3D4-0000-4000-8000-000000000015", "courseName" : "形势与政策 I", "teacher" : "李英", "weekday" : 5, "startPeriod" : 1, "endPeriod" : 2, "weeks" : [6], "room" : "新教4-202", "category" : "必修", "creditHours" : 8 },
+    { "id" : "A1B2C3D4-0000-4000-8000-000000000016", "courseName" : "Python与人工智能", "teacher" : "林明玉", "weekday" : 6, "startPeriod" : 5, "endPeriod" : 6, "weeks" : [16,17], "room" : "教2-210", "category" : "必修", "creditHours" : 40 },
+    { "id" : "A1B2C3D4-0000-4000-8000-000000000017", "courseName" : "Python与人工智能", "teacher" : "林明玉", "weekday" : 6, "startPeriod" : 5, "endPeriod" : 6, "weeks" : [9,10], "room" : "教3-220", "category" : "必修", "creditHours" : 40 },
+    { "id" : "A1B2C3D4-0000-4000-8000-000000000018", "courseName" : "Python与人工智能", "teacher" : "林明玉", "weekday" : 6, "startPeriod" : 7, "endPeriod" : 8, "weeks" : [16,17], "room" : "教2-210", "category" : "必修", "creditHours" : 40 },
+    { "id" : "A1B2C3D4-0000-4000-8000-000000000019", "courseName" : "工程制图", "teacher" : "叶磊", "weekday" : 7, "startPeriod" : 1, "endPeriod" : 2, "weeks" : [2,6], "room" : "教2-614", "category" : "选修", "creditHours" : 32 },
+    { "id" : "A1B2C3D4-0000-4000-8000-000000000020", "courseName" : "工程制图", "teacher" : "叶磊", "weekday" : 7, "startPeriod" : 3, "endPeriod" : 4, "weeks" : [2,6], "room" : "教2-614", "category" : "选修", "creditHours" : 32 },
+    { "id" : "A1B2C3D4-0000-4000-8000-000000000021", "courseName" : "Python与人工智能", "teacher" : "林明玉", "weekday" : 7, "startPeriod" : 5, "endPeriod" : 6, "weeks" : [1,2,3,6,7,8,9,10,11,12,13,14,16,17], "room" : "教1-305", "category" : "必修", "creditHours" : 40 }
+  ]
+}
+;
 
 const DEFAULT_PERIODS = [
   { index: 1,  start: '08:30', end: '09:15' },

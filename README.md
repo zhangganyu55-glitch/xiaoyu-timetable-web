@@ -12,6 +12,8 @@
 </tr>
 </table>
 
+<sub>截图里用的是虚构的示例课表。</sub>
+
 ## 怎么用
 
 **在线**（推荐，手机加到主屏幕后可离线）：
@@ -42,17 +44,30 @@
 
 没做图片导入的原因：浏览器端 OCR 要下载几十 MB 的模型（Tesseract.js / PaddleOCR-js），与「单文件、离线、零依赖」直接冲突。真需要的话可以单独做一个带模型的版本。
 
+## 数据与隐私
+
+**线上这份 `index.html` 里就是我自己的真实课表**（课程名、老师、教室都在里面，任何人访问都能看到）。这个站的用户只有我一个，所以是这么放的。
+
+`template.html` 是同一套页面、但课表为空。想复用这套东西又不想公开自己课表时：
+
+1. 把 `template.html` 当作站点首页（改名 `index.html`）
+2. 课表用「设置 → 导入 JSON」灌进去，只存在你自己的浏览器里
+
+要重新生成一份带数据的单文件：
+
+```bash
+bash build-personal.sh data/my-schedule.json dist/小雨课程表.html
+```
+
+`data/` 和 `dist/` 都在 `.gitignore` 里，不会被误传。
+
 ## 自己部署一份
 
-1. 把本仓库推到自己的 GitHub
+1. 把本仓库推到自己的 GitHub（或直接 fork）
 2. Settings → Pages → Source 选 `main` 分支 `/root`
 3. 访问 `https://<你的用户名>.github.io/<仓库名>/`
 
 不需要构建，这就是几个静态文件。
-
-## 数据与隐私
-
-**仓库里不含任何真实课表**，示例数据全是虚构的（`index.html` 里的 `DEMO`）。你自己的课表只存在浏览器的 `localStorage` 里，或者你主动导出的 JSON 文件里。
 
 ## 实现说明
 

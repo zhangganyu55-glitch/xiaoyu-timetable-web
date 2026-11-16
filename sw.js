@@ -1,7 +1,7 @@
 /* 小雨课程表 · Service Worker
    目的：GitHub Pages 打开一次之后，即使没网也能用（手机离线同样成立）。
    策略：导航请求走「网络优先、失败回缓存」，静态资源走「缓存优先」。 */
-const CACHE = 'xiaoyu-timetable-v1';
+const CACHE = 'xiaoyu-timetable-v2';
 const ASSETS = [
   './',
   './index.html',

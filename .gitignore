@@ -7,6 +7,5 @@ dist/
 qa.cjs
 qa-http.cjs
 make-icons.cjs
-build-personal.sh
 
 .DS_Store
