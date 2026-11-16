@@ -1,0 +1,12 @@
+# 本地构建产物与个人数据，不进公开仓库
+data/
+dist/
+.dev/
+
+# 本地开发脚本
+qa.cjs
+qa-http.cjs
+make-icons.cjs
+build-personal.sh
+
+.DS_Store
