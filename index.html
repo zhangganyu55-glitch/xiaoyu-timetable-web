@@ -468,6 +468,7 @@ input[type=date],input[type=time]{font-variant-numeric:tabular-nums}
           <button class="btn" id="stExport" type="button">导出 JSON</button>
           <button class="btn" id="stImport" type="button">导入 JSON</button>
           <button class="btn" id="stClear" type="button">清空课表</button>
+          <button class="btn" id="stRestore" type="button" hidden>恢复内置课表</button>
         </div>
         <p class="hint">数据只存在这台设备的浏览器里，不上传任何服务器。换设备或清缓存前记得导出。</p>
         <input type="file" id="fileInput" accept="application/json,.json" hidden>
@@ -1176,6 +1177,19 @@ $('#fileInput').addEventListener('change', e => {
   if (file) importJSON(file);
   e.target.value = '';
 });
+// 内置课表存在时，给一个一键回滚的出口（避免示例数据或误改卡住）
+if (SEED) $('#stRestore').hidden = false;
+$('#stRestore').addEventListener('click', () => {
+  if (!confirm('用内置课表覆盖当前课表？现有改动会丢失，建议先导出备份。')) return;
+  state = normalize(SEED);
+  persist();
+  dlgSettings.close();
+  const w = currentWeek();
+  displayedWeek = Math.max(1, Math.min(30, w ?? 1));
+  render();
+  toast('已恢复内置课表');
+});
+
 $('#stClear').addEventListener('click', () => {
   if (!confirm('清空所有课程？此操作不可撤销，建议先导出备份。')) return;
   state.sessions = [];
